@@ -1,32 +1,37 @@
 
 Template.students.helpers({
-  students: function () {
-    return Meteor.users.find({
-      profile: { isTeacher: { $ne: true } },
-      session: { $exists: true }
-    });
+  sessions: function () {
+    return Sessions.find({ waiting: true });
+  },
+
+  rightDisabled: function () {
+    if( !Session.get('sessionId') ) return 'disabled';
+    else return '';
   }
 });
 
-$(function() {
-  setHandlers();
-  onAuth(function success() {
-    $('.continue').click(function() {
-      var teacherId = window.currentUser.uid;
-      var studentId = $('.student.selected').attr('id');
-      fb.users.child(teacherId).child('currentStudent').set(studentId, function() {
-        window.location.href = '/session';
-      });
-    });
-  }, function failure() {
-    // no action
-  });
+Template.students.events({
+  'click .continue': function () {
+    Meteor.call('joinSession', Session.get('sessionId'));
+    Router.go('session');
+  }
 });
 
-var setHandlers = function() {
-  $('.student').click(function() {
-    $('.student').removeClass('selected');
-    $(this).addClass('selected');
-    $('.continue').prop('disabled', false);
-  });
-};
+Template.sessionRow.helpers({
+  active: function () {
+    if(this._id === Session.get('sessionId')) return 'active';
+    else return '';
+  },
+
+  studentName: function () {
+    var student = Meteor.users.find({ _id: this.studentId });
+    var profile = safeGetProp(student, 'profile');
+    return safeGetProp(profile, 'name');
+  }
+});
+
+Template.sessionRow.events({
+  'click .student': function () {
+    Session.set('sessionId', this._id);
+  }
+});

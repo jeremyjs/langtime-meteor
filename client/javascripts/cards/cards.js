@@ -1,3 +1,4 @@
+
 Template.cards.helpers({
   data: function () {
     // TODO: replace with publication/subscription

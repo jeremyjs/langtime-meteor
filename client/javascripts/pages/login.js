@@ -15,9 +15,6 @@ function synchronize(src, dest) {
   };
 };
 
-function setup() {
-}
-
 Template.login.events({
   'click .signup-link': synchronize('.login', '.signup'),
 

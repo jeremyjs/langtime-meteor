@@ -27,10 +27,6 @@ function warnAndNavigate(options) {
   };
 };
 
-function safeGetProp (obj, prop) {
-  return obj && obj[prop];
-};
-
 Template.navbar.helpers({
   username: function () {
     var profile = safeGetProp(Meteor.user(), 'profile');

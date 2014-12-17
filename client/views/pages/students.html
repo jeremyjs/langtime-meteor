@@ -1,22 +1,22 @@
 <template name="students">
-  {{#with title="Select Student" right="Join Session" rightDisabled=true}}
+  {{#with title="Select Student" right="Join Session" rightDisabled=rightDisabled}}
     {{> navtop}}
   {{/with}}
   <div class="students">
     <table class="table">
       <tbody>
-        {{#each students}}
-          {{> studentRow}}
+        {{#each sessions}}
+          {{> sessionRow}}
         {{/each}}
       </tbody>
     </table>
   </div>
 </template>
 
-<template name="studentRow">
+<template name="sessionRow">
   <tr>
-    <td id="{{_id}}" class="student">
-      {{profile.name}}
+    <td id="{{_id}}" class="student {{active}}">
+      {{studentName}}
     </td>
   </tr>
 </template>

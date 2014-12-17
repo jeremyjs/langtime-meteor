@@ -1,7 +1,10 @@
 
 Router.configure({
   onBeforeAction: function() {
-    if(Meteor.user() || Meteor.loggingIn()) this.next();
+    if(Meteor.user() || Meteor.loggingIn()) {
+      if(this.name !== 'session') Meteor.call('clearSession');
+      this.next();
+    }
     else this.render('login');
   },
   layoutTemplate: 'layout'
@@ -13,8 +16,12 @@ Router.route('/', function () {
   } else {
     this.render('dashboard');
   }
-});
+}, { name: 'root' });
 
-Router.route('/waiting');
+Router.route('/login', { name: 'login' });
 
-Router.route('/session');
+Router.route('/waiting', { name: 'waiting' });
+
+Router.route('/session', function () {
+  Meteor.call('setSessionWaiting');
+}, { name: 'session' });
