@@ -1,0 +1,26 @@
+
+.theme {
+  &.active .content,
+  &.active .overlay {
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    box-shadow: 0 4px 10px 5px rgba(0,0,0,.60);
+  }
+
+  .content:hover,
+  .overlay:hover {
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    box-shadow: 0 4px 10px 5px rgba(0,0,0,.60);
+  }
+
+  .actions {
+    padding-top: 20px;
+  }
+
+  .card-container {
+    clear: both;
+  }
+}

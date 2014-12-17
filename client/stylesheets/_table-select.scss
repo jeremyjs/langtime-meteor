@@ -1,0 +1,13 @@
+
+thead {
+  color: green;
+}
+
+td {
+  cursor: pointer;
+}
+
+.table>tbody>tr>td.selected {
+  background: #aaa;
+  border: 1px solid #666;
+}

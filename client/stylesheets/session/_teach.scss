@@ -1,0 +1,132 @@
+
+.left-col {
+  float: left;
+}
+
+.student-name {
+    margin: 15px 0 10px;
+}
+
+.sequencer {
+  width: 20vw;
+}
+
+.sequencer .phrases {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sequencer .phrase {
+  margin: 0;
+  padding: 20px 10px 20px;
+  width: 100%;
+  text-align: left;
+  list-decoration: none;
+}
+
+.sequencer .phrase.active {
+  background-color: #efefef;
+  box-shadow: rgba(0,0,0,0.2) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 2px;
+  border-radius: 10px;
+}
+
+.sequencer .phrase.disabled {
+  color: #aaa;
+}
+
+.sequencer .actions {
+  margin: 0;
+  padding: 11px 10px 20px;
+  height: 58px;
+}
+
+.sequencer .actions .action {
+  padding-bottom: 20px;
+  margin-left: 10px;
+  float: right;
+}
+
+.feedback {
+  display: table-cell;
+  width: inherit;
+  height: 300px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.feedback .actions {
+  height: auto;
+  text-align: left;
+}
+
+.feedback .actions .action {
+  display: inline-block;
+}
+
+.action.left {
+  margin-right: 20px;
+}
+
+.right-col {
+  margin-left: 40px;
+  float: left;
+}
+
+.right-col .card-container {
+  margin-top: 20px;
+  width: 60vw;
+}
+
+.right-col .card {
+  position: relative;
+  display: inline-block;
+  width: 33.3333%;
+  height: 120px;
+  margin-bottom: 40px;
+}
+
+.right-col .card .content {
+  margin: 0 auto;
+  height: 100%;
+  width: 213px;
+  border-radius: 5px;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px 1px rgba(0,0,0,.60);
+}
+
+.right-col .card .content img {
+  border-radius: 5px;
+  height: 100%;
+  width: auto;
+}
+
+.right-col .card .content:hover {
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+  box-shadow: 0 4px 10px 5px rgba(0,0,0,.60);
+}
+
+.right-col .card .overlay {
+  margin: 0 auto;
+  height: 100%;
+  width: 213px;
+  border-radius: 5px;
+  position: absolute;
+  padding: 5px;
+  padding-top: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:rgba(0, 0, 0, 0.60);
+  z-index:9999;
+  color:white;
+}

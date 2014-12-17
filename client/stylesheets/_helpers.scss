@@ -1,0 +1,41 @@
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+}
+
+.btn-circle.btn-xl {
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 48px;
+  border-radius: 60px;
+}
+
+.center {
+  text-align: center;
+}
+
+.top-right {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.bottom-right {
+  display: inline-block;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.delete > i {
+  padding-top: 2px;
+  font-size: 16px;
+}

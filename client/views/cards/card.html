@@ -1,0 +1,21 @@
+<template name="card">
+  <div class="simple card" id="{{_id}}">
+    <div class="inner">
+      <div class="content">
+        <img width="150" src="{{imageUrl}}"/>
+      </div>
+      <div class="overlay" hidden>
+        <h1 class="title center">{{title}}</h1>
+        <button class="btn btn-xs btn-danger delete top-right"><i class="fa fa-remove danger"></i></button>
+        <div class="phrases">
+          {{#each phrases}}
+            <p class="phrase center">{{this}}</p>
+          {{/each}}
+        </div>
+        <div class="form-group">
+          <button class="btn btn-xs btn-default btn-image bottom-right"><i class="fa fa-image"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

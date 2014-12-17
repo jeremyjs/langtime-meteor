@@ -1,0 +1,13 @@
+
+.nav-top {
+  display: inline-block;
+  width: 100%;
+
+  .actions {
+    padding-top: 20px;
+
+    &.pull-left {
+      margin-right: 20px;
+    }
+  }
+}

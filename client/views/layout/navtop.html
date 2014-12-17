@@ -1,0 +1,21 @@
+<template name="navtop">
+  <div class="nav-top">
+    {{#if left}}
+      <div class="actions pull-left">
+        <button disabled="{{leftDisabled}}" class="btn btn-default back">{{left}}</button>
+      </div>
+    {{/if}}
+    {{#if title}}
+      <h1 class="pull-left">{{title}}</h1>
+    {{/if}}
+    {{#if paypal}}
+      {{> paypalButton}}
+    {{/if}}
+    {{#if right}}
+      <div class="actions pull-right">
+        <button disabled="{{rightDisabled}}" class="btn btn-default continue">{{right}}</button>
+      </div>
+    {{/if}}
+  </div>
+  <hr>
+</template>

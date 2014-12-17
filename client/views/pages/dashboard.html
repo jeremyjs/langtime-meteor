@@ -1,0 +1,9 @@
+<template name="dashboard">
+  {{#with left="" title="Dashboard" right="New Session"}}
+    {{> navtop}}
+  {{/with}}
+  <div class="dashboard card-container">
+    {{> addCard}}
+    {{> cards}}
+  </div>
+</template>
