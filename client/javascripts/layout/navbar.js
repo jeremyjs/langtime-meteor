@@ -43,7 +43,7 @@ Template.navbar.helpers({
 
 Template.navbar.events({
   'click .dashboard': warnAndNavigate({
-    href: '/dashboard',
+    href: '/',
     action_text: 'go to the dashboard',
     confirm_text: 'To the Dashboard!'
   }),

@@ -24,4 +24,5 @@ Router.route('/waiting', { name: 'waiting' });
 
 Router.route('/session', function () {
   Meteor.call('setSessionWaiting');
+  this.render('session');
 }, { name: 'session' });
