@@ -11,12 +11,24 @@ Router.configure({
 });
 
 Router.route('/', function () {
-  if(Meteor.user().profile.isTeacher) {
-    this.render('students');
+  if(Meteor.user() && Meteor.user().profile.isTeacher) {
+    this.redirect('students');
   } else {
-    this.render('dashboard');
+    this.redirect('cardLibrary');
   }
-}, { name: 'root' });
+}, {
+  name: 'root'
+});
+
+Router.route('/students');
+
+Router.route('/cards', {
+  name: 'cardLibrary',
+  template: 'cardLibrary',
+  data: function() {
+    return Cards.find({ userId: Meteor.userId() });
+  }
+});
 
 Router.route('/login', { name: 'login' });
 

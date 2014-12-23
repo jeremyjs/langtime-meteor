@@ -4,33 +4,31 @@
       <button type="button" data-toggle="collapse" data-target="#navbar" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">LangTime</a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
-      <h4 class="nav-heading navbar-left"> {{username}} </h4>
-      <ul class="nav navbar-nav pull-right">
-        {{#if isStudent}}
-          <li class="dashboard action">
+      <h4 class="nav-heading navbar-left">
+        {{currentPageName}}
+      </h4>
+      <ul class="nav navbar-nav navbar-right">
+        {{#if showLibrary}}
+          <li class="card-library action">
             <a href="#">
-              Dashboard
-              <span class="sr-only">(Dashboard)</span>
+              Card Library
+              <span class="sr-only">(Card Library)</span>
             </a>
           </li>
-          <!-- <li class="phrases action">
-            <a href="#">
-              Phrase Bank
-              <span class="sr-only">(Phrase Bank)</span>
-            </a>
-          </li> -->
         {{/if}}
         {{#if loggedIn}}
-          <li class="logout">
-            <form action="#">
-              <button class="btn btn-default navbar-btn logout">Logout</button>
-            </form>
-          </li>
-        {{else}}
-          <li class="login">
-            <form action="#">
-              <button class="btn btn-default navbar-btn login">Login</button>
-            </form>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              {{username}}&nbsp;
+              <i class="fa fa-user"></i>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <!-- <li class="username"><a href="">  </a></li>
+              <li class="divider"></li> -->
+              <li class="settings"><a href="#"> <i class="fa fa-gear"></i> Settings </a></li>
+              <li class="logout"><a href="#"> <i class="fa fa-user"></i> Logout </a></li>
+            </ul>
           </li>
         {{/if}}
       </ul>

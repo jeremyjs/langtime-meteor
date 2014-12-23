@@ -1,0 +1,11 @@
+<template name="cardLibrary">
+  {{#with left="" title="" right="New Session"}}
+    {{> navtop}}
+  {{/with}}
+  <div class="dashboard card-container">
+    {{> addCard}}
+    {{#each this}}
+      {{> card}}
+    {{/each}}
+  </div>
+</template>

@@ -1,5 +1,5 @@
 
-Template.dashboard.events({
+Template.cardLibrary.events({
   'click .continue': function (e) {
     Router.go('/session');
   }

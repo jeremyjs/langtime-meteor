@@ -27,22 +27,32 @@ function warnAndNavigate(options) {
   };
 };
 
+function isStudent() {
+  var profile = safeGetProp(Meteor.user(), 'profile');
+  return profile && !(profile.isTeacher);
+}
+
 Template.navbar.helpers({
   username: function () {
     var profile = safeGetProp(Meteor.user(), 'profile');
-    return profile && profile.name;
+    return safeGetProp(profile, 'name');
+  },
+  showLibrary: function () {
+    return isStudent() && !currentRouteName('cardLibrary');
   },
   isStudent: function () {
-    var profile = safeGetProp(Meteor.user(), 'profile');
-    return profile && !(profile.isTeacher);
+    return isStudent();
   },
   loggedIn: function () {
     return Meteor.user();
+  },
+  currentPageName: function () {
+    return currentRouteName().toProperName();
   }
 });
 
 Template.navbar.events({
-  'click .dashboard': warnAndNavigate({
+  'click .card-library': warnAndNavigate({
     href: '/',
     action_text: 'go to the dashboard',
     confirm_text: 'To the Dashboard!'
@@ -52,8 +62,8 @@ Template.navbar.events({
     action_text: 'go to the phrase bank',
     confirm_text: 'To the Phrase Bank!'
   }),
-  'click button.logout': function() {
+  'click .logout': function() {
     Meteor.logout();
-    window.location.href = '/users/login';
+    Router.go('login');
   }
 });
