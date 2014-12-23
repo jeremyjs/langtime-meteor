@@ -65,8 +65,5 @@ Template.navbar.events({
   'click .logout': function() {
     Meteor.logout();
     Router.go('login');
-  },
-  'click .settings': function() {
-    Router.go('settings');
   }
 });
