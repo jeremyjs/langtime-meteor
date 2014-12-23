@@ -38,3 +38,13 @@ Router.route('/session', function () {
   Meteor.call('setSessionWaiting');
   this.render('session');
 }, { name: 'session' });
+
+Router.route('/settings', {
+  data: function() {
+    var user = Meteor.user();
+    return {
+      name: user.profile.name,
+      email: user.emails[0].address
+    }
+  }
+});
