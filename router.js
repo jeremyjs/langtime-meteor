@@ -28,6 +28,8 @@ Router.route('/cards', {
   data: function() {
     return Cards.find({ userId: Meteor.userId() });
   }
+}, {
+  name: 'cardLibrary'
 });
 
 Router.route('/login', { name: 'login' });
@@ -48,3 +50,7 @@ Router.route('/settings', {
     }
   }
 });
+
+Router.route('/speech-demo', function() {
+  this.render('speech_to_text');
+}, { name: 'speechDemo' });
