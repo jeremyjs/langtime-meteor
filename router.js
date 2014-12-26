@@ -50,7 +50,3 @@ Router.route('/settings', {
     }
   }
 });
-
-Router.route('/speech-demo', function() {
-  this.render('speech_to_text');
-}, { name: 'speechDemo' });
